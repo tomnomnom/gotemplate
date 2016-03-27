@@ -1,0 +1,4 @@
+# Go Template
+
+A template for my Go projects.
+

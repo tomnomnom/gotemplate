@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+PROJDIR=$(cd `dirname $0`/.. && pwd)
+
+if [ -z "${PROJDIR}" ]; then
+    echo "For some reason the project directory couldn't be determined"
+    exit 1
+fi
+
+read -p "Delete the .git directory from ${PROJDIR}? [YN]" YN
+
+if [ "${YN}" == "Y" ]; then
+    rm -rf "${PROJDIR}/.git"
+    exit 0
+else
+    echo "Did not delete .git directory"
+    exit 2
+fi
+
